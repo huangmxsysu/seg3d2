@@ -77,4 +77,4 @@ SET(CORE_UTILS_SRCS
 ##################################################
 
 CORE_ADD_LIBRARY(Core_Utils ${CORE_UTILS_SRCS})
-TARGET_LINK_LIBRARIES(Core_Utils ${SCI_BOOST_LIBRARY})
+TARGET_LINK_LIBRARIES(Core_Utils ${Boost_LIBRARIES})
