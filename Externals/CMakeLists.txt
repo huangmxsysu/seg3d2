@@ -77,8 +77,8 @@ ADD_SUBDIRECTORY(teem)
 # ADDING TINYXML
 ##################################################
 
-#MESSAGE(STATUS "Configuring tinyxml")
-#ADD_SUBDIRECTORY(tinyxml)
+MESSAGE(STATUS "Configuring tinyxml")
+ADD_SUBDIRECTORY(tinyxml)
 
 ##################################################
 # ADDING TINYXML
