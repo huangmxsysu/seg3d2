@@ -34,13 +34,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 
 PROJECT(Seg3D)
 
-###########################################
-# Verify build directory
-###########################################
 
-IF ( ${CMAKE_BINARY_DIR} MATCHES ${CMAKE_SOURCE_DIR} )
-	MESSAGE( FATAL_ERROR "Please delete the CMakeCache.txt from the src directory and build Seg3D in the bin directory. Run 'rm CMakeCache.txt; cd ../bin; cmake ../src' from the binary directory." )
-ENDIF ( ${CMAKE_BINARY_DIR} MATCHES ${CMAKE_SOURCE_DIR} )
 
 ###########################################
 # Set default CMAKE_BUILD_TYPE
@@ -134,17 +128,17 @@ ENDIF (CMAKE_SIZEOF_VOID_P MATCHES 8)
 # need to be set project wide.
 ###########################################
 
-ADD_DEFINITIONS(-DGLEW_STATIC)
-ADD_DEFINITIONS(-DTEEM_STATIC)
-ADD_DEFINITIONS(-DLIBXML_STATIC)
-ADD_DEFINITIONS(-DTINYXML_STATIC)
-ADD_DEFINITIONS(-DBOOST_ALL_NO_LIB)
-ADD_DEFINITIONS(-DQT_NO_KEYWORDS)
-ADD_DEFINITIONS(-DTIXML_USE_STL)
+#ADD_DEFINITIONS(-DGLEW_STATIC)
+#ADD_DEFINITIONS(-DTEEM_STATIC)
+#ADD_DEFINITIONS(-DLIBXML_STATIC)
+#ADD_DEFINITIONS(-DTINYXML_STATIC)
+#ADD_DEFINITIONS(-DBOOST_ALL_NO_LIB)
+#ADD_DEFINITIONS(-DQT_NO_KEYWORDS)
+#ADD_DEFINITIONS(-DTIXML_USE_STL)
   
-SET(ITK_BUILD_SHARED_LIBS "STATIC")
-SET(ITK_USE_REVIEW TRUE CACHE BOOLEAN "Seg3D requires the ITK Review directory for proper filter operations." FORCE)
-SET(ITK_USE_REVIEW_STATISTICS TRUE CACHE BOOLEAN "Seg3D requires the ITK Review directory for proper filter operations." FORCE)
+#SET(ITK_BUILD_SHARED_LIBS "STATIC")
+#SET(ITK_USE_REVIEW TRUE CACHE BOOLEAN "Seg3D requires the ITK Review directory for proper filter operations." FORCE)
+#SET(ITK_USE_REVIEW_STATISTICS TRUE CACHE BOOLEAN "Seg3D requires the ITK Review directory for proper filter operations." FORCE)
 
 ###########################################
 # Flags for Microsoft Compiler
@@ -224,7 +218,7 @@ ENDIF(BUILD_WITH_PYTHON)
 # versions of Qt.
 ###########################################
 
-ADD_SUBDIRECTORY(Externals)
+#ADD_SUBDIRECTORY(Externals)
 
 ###########################################
 # SETUP FOR DEBUG BUILDS
@@ -293,6 +287,20 @@ INCLUDE_DIRECTORIES(BEFORE ${CMAKE_CURRENT_BINARY_DIR})
 ###########################################
 # Set the include paths
 ###########################################
+
+# Find ITK.
+FIND_PACKAGE( ITK 4 REQUIRED )
+include( ${ITK_USE_FILE} )
+
+# Find gdcm.
+FIND_PACKAGE( GDCM REQUIRED )
+include( ${GDCM_USE_FILE} )
+
+# Find boost.
+FIND_PACKAGE( Boost 1.40  COMPONENTS system filesystem REQUIRED )
+MESSAGE(${Boost_INCLUDE_DIR})
+INCLUDE_DIRECTORIES( ${Boost_INCLUDE_DIR} )
+
 
 INCLUDE_DIRECTORIES(${QT_INCLUDE_DIR})
 INCLUDE_DIRECTORIES(${SCI_BOOST_INCLUDE})
