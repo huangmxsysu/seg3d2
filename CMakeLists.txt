@@ -129,7 +129,7 @@ ENDIF (CMAKE_SIZEOF_VOID_P MATCHES 8)
 ###########################################
 
 #ADD_DEFINITIONS(-DGLEW_STATIC)
-#ADD_DEFINITIONS(-DTEEM_STATIC)
+ADD_DEFINITIONS(-DTEEM_STATIC)
 #ADD_DEFINITIONS(-DLIBXML_STATIC)
 #ADD_DEFINITIONS(-DTINYXML_STATIC)
 #ADD_DEFINITIONS(-DBOOST_ALL_NO_LIB)
@@ -218,7 +218,7 @@ ENDIF(BUILD_WITH_PYTHON)
 # versions of Qt.
 ###########################################
 
-#ADD_SUBDIRECTORY(Externals)
+ADD_SUBDIRECTORY(Externals)
 
 ###########################################
 # SETUP FOR DEBUG BUILDS

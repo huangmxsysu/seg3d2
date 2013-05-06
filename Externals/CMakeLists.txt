@@ -32,22 +32,22 @@ MESSAGE(STATUS "Configuring External Packages")
 # ADDING ZLIB
 ##################################################
 
-MESSAGE(STATUS "Configuring zlib")
-ADD_SUBDIRECTORY(zlib)
+#MESSAGE(STATUS "Configuring zlib")
+#ADD_SUBDIRECTORY(zlib)
 
 ##################################################
 # ADDING MATLABIO
 ##################################################
 
-MESSAGE(STATUS "Configuring MatlabIO")
-ADD_SUBDIRECTORY(MatlabIO)
+#MESSAGE(STATUS "Configuring MatlabIO")
+#ADD_SUBDIRECTORY(MatlabIO)
 
 ##################################################
 # ADDING LIBPNG
 ##################################################
 
-MESSAGE(STATUS "Configuring libpng")
-ADD_SUBDIRECTORY(libpng)
+#MESSAGE(STATUS "Configuring libpng")
+#ADD_SUBDIRECTORY(libpng)
 
 ##################################################
 # ADDING TEEM
@@ -63,75 +63,75 @@ ADD_SUBDIRECTORY(teem)
 # ADDING GLEW
 ##################################################
 
-MESSAGE(STATUS "Configuring glew")
-ADD_SUBDIRECTORY(glew)
+#MESSAGE(STATUS "Configuring glew")
+#ADD_SUBDIRECTORY(glew)
 
 ##################################################
 # ADDING FREETYPE
 ##################################################
 
-MESSAGE(STATUS "Configuring freetype")
-ADD_SUBDIRECTORY(freetype)
+#MESSAGE(STATUS "Configuring freetype")
+#ADD_SUBDIRECTORY(freetype)
 
 ##################################################
 # ADDING TINYXML
 ##################################################
 
-MESSAGE(STATUS "Configuring tinyxml")
-ADD_SUBDIRECTORY(tinyxml)
+#MESSAGE(STATUS "Configuring tinyxml")
+#ADD_SUBDIRECTORY(tinyxml)
 
 ##################################################
 # ADDING TINYXML
 ##################################################
 
-MESSAGE(STATUS "Configuring SQLite")
-ADD_SUBDIRECTORY(sqlite)
+#MESSAGE(STATUS "Configuring SQLite")
+#ADD_SUBDIRECTORY(sqlite)
 
 ##################################################
 # ADDING GDCM
 ##################################################
 
-MESSAGE(STATUS "Configuring GDCM")
-ADD_SUBDIRECTORY(gdcm)
+#MESSAGE(STATUS "Configuring GDCM")
+#ADD_SUBDIRECTORY(gdcm)
 
 ##################################################
 # ADDING ITK
 ##################################################
 
-MESSAGE(STATUS "Configuring insight toolkit")
+#MESSAGE(STATUS "Configuring insight toolkit")
 
 # Force ITK not to install any libraries, header
 # files etc. Because we don't need that stuff
 
-SET(ITK_INSTALL_NO_DEVELOPMENT 1)
-SET(ITK_INSTALL_NO_RUNTIME 1)
-SET(ITK_INSTALL_NO_DOCUMENTATION 1)
-SET(ITK_INSTALL_NO_LIBRARIES 1)
-SET(ITK_USE_SYSTEM_GDCM 1 CACHE BOOL "" FORCE)
-INCLUDE_DIRECTORIES(${SCI_GDCM_INCLUDE})
-ADD_SUBDIRECTORY(itk)
+#SET(ITK_INSTALL_NO_DEVELOPMENT 1)
+#SET(ITK_INSTALL_NO_RUNTIME 1)
+#SET(ITK_INSTALL_NO_DOCUMENTATION 1)
+#SET(ITK_INSTALL_NO_LIBRARIES 1)
+#SET(ITK_USE_SYSTEM_GDCM 1 CACHE BOOL "" FORCE)
+#INCLUDE_DIRECTORIES(${SCI_GDCM_INCLUDE})
+#ADD_SUBDIRECTORY(itk)
 
 ##################################################
 # ADDING MRC2000
 ##################################################
 
-MESSAGE(STATUS "Configuring MRC2000")
-ADD_SUBDIRECTORY(MRC2000IO)
+#MESSAGE(STATUS "Configuring MRC2000")
+#ADD_SUBDIRECTORY(MRC2000IO)
 
 ##################################################
 # ADDING PYTHON
 ##################################################
 
-IF(BUILD_WITH_PYTHON)
-  MESSAGE(STATUS "Configuring python")
-  ADD_SUBDIRECTORY(python)
-ENDIF(BUILD_WITH_PYTHON)
+#IF(BUILD_WITH_PYTHON)
+#  MESSAGE(STATUS "Configuring python")
+#  ADD_SUBDIRECTORY(python)
+#ENDIF(BUILD_WITH_PYTHON)
 
 ##################################################
 # ADDING BOOST
 ##################################################
 
-MESSAGE(STATUS "Configuring boost")
-ADD_SUBDIRECTORY(boost)
+#MESSAGE(STATUS "Configuring boost")
+#ADD_SUBDIRECTORY(boost)
 
 MESSAGE(STATUS "Configuring Seg3D2")
